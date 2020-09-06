@@ -6,3 +6,4 @@
 * [特徴的な演算子](src/operators.md)
 * [関数とモジュール](src/module_functions.md)
 * [制御構文](src/control_syntax.md)
+* [Enumモジュール](src/enum.md)
