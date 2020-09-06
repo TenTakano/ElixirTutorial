@@ -1,0 +1,393 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>基本的な型 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="operators.html" />
+    
+    
+    <link rel="prev" href="elixir_erlang.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="elixir_erlang.html">
+            
+                <a href="elixir_erlang.html">
+            
+                    
+                    ElixirとErlang
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.3" data-path="basic_types.html">
+            
+                <a href="basic_types.html">
+            
+                    
+                    基本的な型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="operators.html">
+            
+                <a href="operators.html">
+            
+                    
+                    特徴的な演算子
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="module_functions.html">
+            
+                <a href="module_functions.html">
+            
+                    
+                    関数とモジュール
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="control_syntax.html">
+            
+                <a href="control_syntax.html">
+            
+                    
+                    制御構文
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="enum.html">
+            
+                <a href="enum.html">
+            
+                    
+                    Enumモジュール
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="pipe.html">
+            
+                <a href="pipe.html">
+            
+                    
+                    パイプ演算子
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >基本的な型</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="&#x57FA;&#x672C;&#x7684;&#x306A;&#x578B;">&#x57FA;&#x672C;&#x7684;&#x306A;&#x578B;</h1>
+<p>Elixir&#x306F;&#x52D5;&#x7684;&#x578B;&#x4ED8;&#x3051;&#x8A00;&#x8A9E;&#xFF0E;&#x5BA3;&#x8A00;&#x3092;&#x3059;&#x308B;&#x5FC5;&#x8981;&#x306F;&#x7121;&#x3044;&#x304C;&#xFF0C;&#x8A00;&#x3046;&#x307E;&#x3067;&#x3082;&#x7121;&#x304F;&#x3069;&#x3093;&#x306A;&#x578B;&#x304C;&#x3042;&#x308B;&#x304B;&#x306F;&#x77E5;&#x3063;&#x3066;&#x304A;&#x304F;&#x5FC5;&#x8981;&#x304C;&#x3042;&#x308B;&#xFF0E;&#x3053;&#x306E;&#x7BC0;&#x3067;&#x306F;&#x578B;&#x306B;&#x3064;&#x3044;&#x3066;&#x8A9E;&#x308B;&#xFF0E;</p>
+<h2 id="&#x6570;&#x5024;">&#x6570;&#x5024;</h2>
+<p>&#x6570;&#x5024;&#x3067;&#x7528;&#x3044;&#x3089;&#x308C;&#x308B;&#x578B;&#x306F;&#x4EE5;&#x4E0B;&#xFF0E;&#x4ED6;&#x8A00;&#x8A9E;&#x3068;&#x6BD4;&#x8F03;&#x3057;&#x3066;&#x7279;&#x7B46;&#x3059;&#x308B;&#x3088;&#x3046;&#x306A;&#x7279;&#x5FB4;&#x306F;&#x7121;&#x3044;&#x3068;&#x601D;&#x3046;&#xFF0E;</p>
+<pre><code>iex&gt; 1      # integer
+iex&gt; 0b11   # integer. 2&#x9032;&#x6570;
+iex&gt; 0o11   # integer. 8&#x9032;&#x6570;
+iex&gt; 0x1F   # integer. 16&#x9032;&#x6570;
+iex&gt; 1.0    # float&#xFF0E;Elixir&#x306E;float&#x306F;64bit&#x306E;&#x500D;&#x7CBE;&#x5EA6;&#x6D6E;&#x52D5;&#x5C0F;&#x6570;&#x70B9;&#x6570;
+</code></pre><h2 id="boolean">boolean</h2>
+<p>&#x3053;&#x3061;&#x3089;&#x3082;&#x7279;&#x306B;&#x5909;&#x308F;&#x3063;&#x305F;&#x3053;&#x3068;&#x306F;&#x7121;&#x3044;&#xFF0E;</p>
+<pre><code>iex&gt; true
+iex&gt; false
+</code></pre><h2 id="&#x6587;&#x5B57;&#x3092;&#x53D6;&#x308A;&#x6271;&#x3046;&#x578B;">&#x6587;&#x5B57;&#x3092;&#x53D6;&#x308A;&#x6271;&#x3046;&#x578B;</h2>
+<p>Elixir&#x3067;&#x306F;&#x30B7;&#x30F3;&#x30B0;&#x30EB;&#x30AF;&#x30A9;&#x30FC;&#x30C6;&#x30FC;&#x30B7;&#x30E7;&#x30F3;<code>&apos;</code>&#x3092;&#x4F7F;&#x3046;&#x5834;&#x5408;&#x3068;&#x30C0;&#x30D6;&#x30EB;&#x30AF;&#x30A9;&#x30FC;&#x30C6;&#x30FC;&#x30B7;&#x30E7;&#x30F3;&#x3092;&#x4F7F;&#x3046;&#x5834;&#x5408;<code>&quot;</code>&#x3067;&#x53D6;&#x308A;&#x6271;&#x3044;&#x304C;&#x660E;&#x78BA;&#x306B;&#x7570;&#x306A;&#x308B;&#xFF0E;&#x57FA;&#x672C;&#x7684;&#x306B;&#x306F;&#x30C0;&#x30D6;&#x30EB;&#x30AF;&#x30A9;&#x30FC;&#x30C6;&#x30FC;&#x30B7;&#x30E7;&#x30F3;&#x3092;&#x4F7F;&#x3063;&#x3066;&#x3044;&#x308C;&#x3070;&#x826F;&#x3044;&#xFF0E;&#x7A00;&#x306B;&#x30B7;&#x30F3;&#x30B0;&#x30EB;&#x30AF;&#x30A9;&#x30FC;&#x30C6;&#x30FC;&#x30B7;&#x30E7;&#x30F3;&#x3092;&#x4F7F;&#x3046;&#x3053;&#x3068;&#x304C;&#x3042;&#x308B;&#xFF0E;</p>
+<pre><code>iex&gt; &quot;string&quot;  # &#x6587;&#x5B57;&#x5217;
+iex&gt; &apos;string&apos;  # &#x30AD;&#x30E3;&#x30E9;&#x30AF;&#x30BF;&#x30EA;&#x30B9;&#x30C8;
+</code></pre><h2 id="&#x30A2;&#x30C8;&#x30E0;">&#x30A2;&#x30C8;&#x30E0;</h2>
+<p>&#x8AAC;&#x660E;&#x3060;&#x3051;&#x3060;&#x3068;&#x6982;&#x5FF5;&#x304C;&#x7406;&#x89E3;&#x3057;&#x306B;&#x304F;&#x3044;&#x304C;&#x5927;&#x4E8B;&#x306A;&#x578B;&#xFF0E;&#x4ED6;&#x8A00;&#x8A9E;&#x3067;&#x306F;&#x30B7;&#x30F3;&#x30DC;&#x30EB;&#x3068;&#x547C;&#x3070;&#x308C;&#x3066;&#x3044;&#x308B;&#x3053;&#x3068;&#x304C;&#x3042;&#x308B;&#xFF0E;</p>
+<pre><code>iex&gt; :someatom
+</code></pre><ul>
+<li>&#x30A2;&#x30C8;&#x30E0;&#x306F;<code>:</code>&#x304B;&#x3089;&#x59CB;&#x307E;&#x308B;&#x540D;&#x524D;&#x4ED8;&#x304D;&#x306E;&#x5024;&#xFF0E;</li>
+<li>&#x5B9F;&#x4F53;&#x304C;VM&#x5185;&#x3067;&#x305F;&#x3060;1&#x3064;&#x3067;&#x3042;&#x308B;&#x3068;&#x3044;&#x3046;&#x7279;&#x5FB4;&#x304C;&#x3042;&#x308B;&#xFF0E;<ul>
+<li>&#x3053;&#x306E;&#x7279;&#x6027;&#x3092;&#x751F;&#x304B;&#x3057;&#x3066;&#xFF0C;&#x95A2;&#x6570;&#x540D;&#x306E;&#x5185;&#x90E8;&#x8868;&#x8A18;&#x3084;&#x4E88;&#x7D04;&#x8A9E;&#x306E;&#x53D6;&#x308A;&#x6271;&#x3044;&#x3067;&#x7528;&#x3044;&#x3089;&#x308C;&#x3066;&#x3044;&#x308B;</li>
+<li>&#x4F8B;&#x3048;&#x3070;&#xFF0C;<code>nil</code>&#xFF08;Elixir&#x3067;&#x306E;<code>null</code>&#xFF09;&#x306F;&#x5185;&#x90E8;&#x7684;&#x306B;<code>:nil</code>&#x3068;&#x306A;&#x3063;&#x3066;&#x3044;&#x308B;</li>
+</ul>
+</li>
+<li>&#x4E00;&#x5EA6;&#x751F;&#x6210;&#x3055;&#x308C;&#x305F;Atom&#x306F;VM&#x304B;&#x3089;&#x6D88;&#x3048;&#x306A;&#x3044;&#x3068;&#x8A00;&#x3046;&#x7279;&#x5FB4;&#x3092;&#x6301;&#x3064;<ul>
+<li>&#x3064;&#x307E;&#x308A;&#x52D5;&#x7684;&#x306B;&#x30AC;&#x30F3;&#x30AC;&#x30F3;&#x4F5C;&#x3063;&#x3066;&#x3057;&#x307E;&#x3046;&#x3068;&#x5371;&#x967A;</li>
+<li>&#x304B;&#x3068;&#x3044;&#x3063;&#x3066;&#x624B;&#x52D5;&#x3067;&#x4F5C;&#x308B;&#x3068;&#x304D;&#x306B;&#x7BC0;&#x7D04;&#x3059;&#x308B;&#x3068;&#x304B;&#x306F;&#x610F;&#x8B58;&#x3057;&#x306A;&#x304F;&#x3066;OK&#xFF08;&#x6570;&#x4E07;&#x500B;&#x30AA;&#x30FC;&#x30C0;&#x30FC;&#x306E;&#x8A71;&#x306A;&#x306E;&#x3067;&#xFF09;</li>
+</ul>
+</li>
+</ul>
+<pre><code>iex&gt; :apple == :apple
+true
+iex&gt; :apple == :orange
+false
+iex&gt; nil == :nil
+true
+</code></pre><h2 id="&#x30EA;&#x30B9;&#x30C8;">&#x30EA;&#x30B9;&#x30C8;</h2>
+<p>&#x4ED6;&#x8A00;&#x8A9E;&#x306E;&#x914D;&#x5217;&#x307F;&#x305F;&#x3044;&#x306A;&#x3082;&#x306E;&#xFF0E;</p>
+<pre><code>iex&gt; [1, 2, 3]
+iex&gt; [1, &quot;a&quot;, :b]  # &#x7570;&#x306A;&#x308B;&#x578B;&#x3067;&#x3082;&#x540C;&#x5C45;&#x3067;&#x304D;&#x308B;
+</code></pre><h2 id="&#x30BF;&#x30D7;&#x30EB;">&#x30BF;&#x30D7;&#x30EB;</h2>
+<p>&#x5024;&#x3092;&#x7D44;&#x307F;&#x5408;&#x308F;&#x305B;&#x305F;&#x578B;&#xFF0E;&#x4ED6;&#x8A00;&#x8A9E;&#x306E;&#x30BF;&#x30D7;&#x30EB;&#x3068;&#x540C;&#x3058;</p>
+<pre><code>iex&gt; {1, 3}
+iex&gt; {1, &quot;a&quot;}  # &#x7570;&#x306A;&#x308B;&#x578B;&#x3067;&#x3082;&#x540C;&#x5C45;&#x3067;&#x304D;&#x308B;
+</code></pre><p>&#x6163;&#x308C;&#x3066;&#x3044;&#x306A;&#x3044;&#x5834;&#x5408;&#xFF0C;&#x30EA;&#x30B9;&#x30C8;&#x3068;&#x30BF;&#x30D7;&#x30EB;&#x3067;&#x3069;&#x3061;&#x3089;&#x3092;&#x9078;&#x3076;&#x3079;&#x304D;&#x304B;&#x8FF7;&#x3046;&#x3053;&#x3068;&#x304C;&#x3042;&#x308B;&#xFF0E;&#x3068;&#x308A;&#x3042;&#x3048;&#x305A;&#x306F;&#x4EE5;&#x4E0B;&#x306E;&#x8A8D;&#x8B58;&#x3067;&#x4F7F;&#x3044;&#x5206;&#x3051;&#x308C;&#x3070;&#x826F;&#x3044;&#xFF0E;</p>
+<ul>
+<li>&#x9577;&#x3055;&#x304C;&#x53EF;&#x5909;&#x306A;&#x3082;&#x306E;&#x306B;&#x306F;&#x30EA;&#x30B9;&#x30C8;&#x3092;&#x7528;&#x3044;&#x308B;<ul>
+<li>e.g.) &#x30E6;&#x30FC;&#x30B6;&#x30FC;&#x306E;&#x4E00;&#x89A7;&#xFF08;&#x4F55;&#x4EBA;&#x5206;&#x306E;&#x30C7;&#x30FC;&#x30BF;&#x304C;&#x5165;&#x308B;&#x304B;&#x308F;&#x304B;&#x3089;&#x306A;&#x3044;&#xFF0E;&#x56FA;&#x5B9A;&#x3055;&#x308C;&#x3066;&#x3044;&#x3066;&#x3082;&#x4ED5;&#x69D8;&#x5909;&#x66F4;&#x3067;&#x9577;&#x3055;&#x304C;&#x5909;&#x308F;&#x308B;&#x304B;&#x3082;&#xFF09;</li>
+</ul>
+</li>
+<li>&#x9577;&#x3055;&#x304C;&#x56FA;&#x5B9A;&#x306A;&#x3082;&#x306E;&#x306B;&#x306F;&#x30EA;&#x30B9;&#x30C8;&#x3092;&#x7528;&#x3044;&#x308B;<ul>
+<li>e.g.) &#x5E73;&#x9762;&#x306E;&#x5EA7;&#x6A19;&#xFF08;&#x6982;&#x5FF5;&#x7684;&#x306B;&#x305D;&#x3082;&#x305D;&#x3082;&#x4E0D;&#x5909;&#xFF0E;3&#x6B21;&#x5143;&#x306E;&#x30C7;&#x30FC;&#x30BF;&#x306B;&#x5909;&#x66F4;&#x3059;&#x308B;&#x3068;&#x3044;&#x3063;&#x305F;&#x5834;&#x5408;&#xFF0C;&#x305D;&#x3082;&#x305D;&#x3082;&#x51E6;&#x7406;&#x3084;&#x5909;&#x6570;&#x306E;&#x547D;&#x540D;&#x304C;&#x6839;&#x672C;&#x7684;&#x306B;&#x7570;&#x306A;&#x308B;&#xFF09;</li>
+</ul>
+</li>
+</ul>
+<h2 id="&#x30DE;&#x30C3;&#x30D7;">&#x30DE;&#x30C3;&#x30D7;</h2>
+<p>key&#x3068;value&#x306E;&#x7D44;&#x307F;&#x5408;&#x308F;&#x305B;&#x3092;&#x96C6;&#x3081;&#x305F;&#x3082;&#x306E;&#xFF0E;&#x8F9E;&#x66F8;&#x578B;&#x3068;&#x3082;&#x547C;&#x3070;&#x308C;&#x308B;&#xFF0E;</p>
+<ul>
+<li>key&#x3068;value&#x306B;&#x306F;&#x3069;&#x306E;&#x3088;&#x3046;&#x306A;&#x578B;&#x3067;&#x3082;&#x7528;&#x3044;&#x308B;&#x3053;&#x3068;&#x304C;&#x3067;&#x304D;&#x308B;</li>
+<li>key&#x306E;&#x91CD;&#x8907;&#x306F;&#x51FA;&#x6765;&#x306A;&#x3044;&#xFF0E;<ul>
+<li>&#x91CD;&#x8907;&#x3057;&#x305F;&#x5834;&#x5408;&#xFF0C;&#x3069;&#x3061;&#x3089;&#x304B;&#x306E;&#x5024;&#x3060;&#x3051;&#x3057;&#x304B;&#x6B8B;&#x3089;&#x306A;&#x3044;</li>
+<li>&#x4ED5;&#x69D8;&#x7684;&#x306B;&#x4E0D;&#x5B9A;&#x306E;&#x305F;&#x3081;&#xFF0C;&#x7D71;&#x4E00;&#x3092;&#x671F;&#x5F85;&#x3057;&#x3066;&#x4F7F;&#x3046;&#x3079;&#x304D;&#x3067;&#x306F;&#x306A;&#x3044;</li>
+</ul>
+</li>
+</ul>
+<pre><code>iex&gt; %{&quot;key&quot; =&gt; &quot;value&quot;, 1 =&gt; :a}
+</code></pre><p>key&#x306B;&#x7528;&#x3044;&#x308B;&#x306E;&#x304C;&#x30A2;&#x30C8;&#x30E0;&#x3060;&#x3051;&#x306E;&#x5834;&#x5408;&#xFF0C;&#x7701;&#x7565;&#x8A18;&#x6CD5;&#x3092;&#x7528;&#x3044;&#x308B;&#x4E8B;&#x304C;&#x3067;&#x304D;&#x308B;</p>
+<pre><code>iex&gt; %{a: &quot;a&quot;, b: &quot;b&quot;}
+iex&gt; %{a: &quot;a&quot;, b: &quot;b&quot;} == %{:a =&gt; &quot;a&quot;, :b =&gt; &quot;b&quot;}
+true
+</code></pre>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="elixir_erlang.html" class="navigation navigation-prev " aria-label="Previous page: ElixirとErlang">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="operators.html" class="navigation navigation-next " aria-label="Next page: 特徴的な演算子">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"基本的な型","level":"1.3","depth":1,"next":{"title":"特徴的な演算子","level":"1.4","depth":1,"path":"src/operators.md","ref":"src/operators.md","articles":[]},"previous":{"title":"ElixirとErlang","level":"1.2","depth":1,"path":"src/elixir_erlang.md","ref":"src/elixir_erlang.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"src/basic_types.md","mtime":"2020-09-06T15:37:00.699Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-09-06T19:20:58.793Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

@@ -1,0 +1,375 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>ElixirとErlang · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="basic_types.html" />
+    
+    
+    <link rel="prev" href="../" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.2" data-path="elixir_erlang.html">
+            
+                <a href="elixir_erlang.html">
+            
+                    
+                    ElixirとErlang
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="basic_types.html">
+            
+                <a href="basic_types.html">
+            
+                    
+                    基本的な型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="operators.html">
+            
+                <a href="operators.html">
+            
+                    
+                    特徴的な演算子
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="module_functions.html">
+            
+                <a href="module_functions.html">
+            
+                    
+                    関数とモジュール
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="control_syntax.html">
+            
+                <a href="control_syntax.html">
+            
+                    
+                    制御構文
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="enum.html">
+            
+                <a href="enum.html">
+            
+                    
+                    Enumモジュール
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="pipe.html">
+            
+                <a href="pipe.html">
+            
+                    
+                    パイプ演算子
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >ElixirとErlang</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="elixir&#x3068;erlang">Elixir&#x3068;Erlang</h1>
+<p>Elixir&#x3068;Erlang&#x306F;&#x5207;&#x3063;&#x3066;&#x3082;&#x5207;&#x308C;&#x306A;&#x3044;&#x95A2;&#x4FC2;&#x306B;&#x3042;&#x308A;&#x307E;&#x3059;</p>
+<ul>
+<li>Elixir&#x306F;Erlang VM&#x4E0A;&#x3067;&#x52D5;&#x3044;&#x3066;&#x3044;&#x307E;&#x3059;</li>
+<li>Java&#x306B;&#x5BFE;&#x3059;&#x308B;Kotlin&#x3084;Scala&#x3068;&#x540C;&#x3058;&#x3088;&#x3046;&#x306A;&#x4F4D;&#x7F6E;&#x3065;&#x3051;&#x3067;&#x3059;</li>
+<li>Elixir&#x3068;Erlang&#x306F;&#x76F8;&#x4E92;&#x306B;&#x8CC7;&#x7523;&#x3092;&#x5229;&#x7528;&#x3057;&#x5408;&#x3048;&#x307E;&#x3059;&#xFF08;Erlang&#x306E;&#x6301;&#x3064;&#x9577;&#x3044;&#x5B9F;&#x7E3E;&#x3092;&#x6301;&#x3064;&#x30E9;&#x30A4;&#x30D6;&#x30E9;&#x30EA;&#x3092;&#x4F7F;&#x3048;&#x308B;&#x306E;&#x306F;&#x304B;&#x306A;&#x308A;&#x5F37;&#x529B;&#x3067;&#x3059;&#xFF09;</li>
+<li>&#x4E0A;&#x8A18;&#x306E;&#x3088;&#x3046;&#x306A;&#x7406;&#x7531;&#x304B;&#x3089;&#xFF0C;Erlang&#x306E;&#x6301;&#x3064;&#x8A00;&#x8A9E;&#x7684;&#x7279;&#x6027;&#x306F;Elixir&#x306B;&#x3082;&#x5F53;&#x3066;&#x306F;&#x307E;&#x308A;&#x307E;&#x3059;</li>
+</ul>
+<h2 id="erlang">Erlang</h2>
+<ul>
+<li>&#x8A95;&#x751F;&#x306F;1986&#x5E74;&#xFF08;34&#x5E74;&#x524D;&#xFF09;&#x3067;&#x304B;&#x306A;&#x308A;&#x6B74;&#x53F2;&#x304C;&#x3042;&#x308B;</li>
+<li>&#x5143;&#x3005;&#x30A8;&#x30EA;&#x30AF;&#x30BD;&#x30F3;&#x793E;&#x304C;&#x96FB;&#x8A71;&#x4EA4;&#x63DB;&#x6A5F;&#x3092;&#x4F5C;&#x308B;&#x305F;&#x3081;&#x306B;&#x958B;&#x767A;&#x3057;&#x305F;&#x305F;&#x3081;&#xFF0C;&#x4EE5;&#x4E0B;&#x306E;&#x3088;&#x3046;&#x306A;&#x7528;&#x9014;&#x306B;&#x512A;&#x308C;&#x305F;&#x7279;&#x6027;&#x3092;&#x6301;&#x3063;&#x3066;&#x3044;&#x308B;<ul>
+<li>&#x3068;&#x306B;&#x304B;&#x304F;&#x30B5;&#x30FC;&#x30D3;&#x30B9;&#x3092;&#x7D99;&#x7D9A;&#x3059;&#x308B;&#x3053;&#x3068;&#x304C;&#x5927;&#x4E8B;&#xFF08;&#x8010;&#x969C;&#x5BB3;&#x6027;&#xFF09;</li>
+<li>&#x30A2;&#x30C3;&#x30D7;&#x30C7;&#x30FC;&#x30C8;&#x6642;&#x3067;&#x3082;&#x6B62;&#x3081;&#x3089;&#x308C;&#x306A;&#x3044;&#xFF08;&#x30DB;&#x30C3;&#x30C8;&#x30B9;&#x30EF;&#x30C3;&#x30D7;&#xFF09;</li>
+<li>&#x591A;&#x6570;&#x306E;&#x6A5F;&#x5668;&#x3067;&#x540C;&#x6642;&#x306B;&#x5229;&#x7528;&#x3055;&#x308C;&#x308B;&#xFF08;&#x5206;&#x6563;&#x6027;&#xFF09;</li>
+</ul>
+</li>
+</ul>
+<p>&#x4E0A;&#x8A18;&#x306E;&#x3088;&#x3046;&#x306A;&#x7279;&#x5FB4;&#x306F;&#x73FE;&#x4EE3;&#x306B;&#x304A;&#x3051;&#x308B;&#x30B5;&#x30FC;&#x30D0;&#x30FC;&#x306E;&#x5206;&#x6563;&#x30B7;&#x30B9;&#x30C6;&#x30E0;&#x3067;&#x3082;&#x5FC5;&#x8981;&#x3068;&#x3055;&#x308C;&#x3066;&#x3044;&#x3066;&#xFF0C;&#x8A00;&#x8A9E;&#x3068;&#x3057;&#x3066;&#x305D;&#x3082;&#x305D;&#x3082;&#x30B5;&#x30FC;&#x30D0;&#x30FC;&#x30B7;&#x30B9;&#x30C6;&#x30E0;&#x306B;&#x9069;&#x3057;&#x3066;&#x3044;&#x308B;&#xFF0E;Nintendo&#x306E;&#x30B2;&#x30FC;&#x30E0;&#x30B5;&#x30FC;&#x30D0;&#x30FC;&#x3067;&#x3082;&#x63A1;&#x7528;&#x5B9F;&#x7E3E;&#x304C;&#x3042;&#x308B;&#x3089;&#x3057;&#x3044;(<a href="https://employment.en-japan.com/engineerhub/entry/2019/08/01/103000" target="_blank">&#x53C2;&#x8003;</a>)&#x3053;&#x306E;&#x7279;&#x6027;&#x3092;&#x5B9F;&#x73FE;&#x3059;&#x308B;&#x305F;&#x3081;&#x306B;&#x4EE5;&#x4E0B;&#x306E;&#x3088;&#x3046;&#x306A;&#x6A5F;&#x80FD;&#x3092;&#x6301;&#x3063;&#x3066;&#x3044;&#x308B;&#xFF0E;</p>
+<ul>
+<li>&#x8A08;&#x91CF;&#x30D7;&#x30ED;&#x30BB;&#x30B9;<ul>
+<li>OS&#x306E;&#x63D0;&#x4F9B;&#x3059;&#x308B;&#x30D7;&#x30ED;&#x30BB;&#x30B9;&#x3084;&#x30B9;&#x30EC;&#x30C3;&#x30C9;&#x3068;&#x306F;&#x7570;&#x306A;&#x308B;</li>
+<li>Erlang VM&#x306B;&#x3088;&#x3063;&#x3066;&#x7BA1;&#x7406;&#x3055;&#x308C;&#x3066;&#x3044;&#x308B;</li>
+<li>&#x751F;&#x6210;&#x30AA;&#x30FC;&#x30D0;&#x30FC;&#x30D8;&#x30C3;&#x30C9;&#x304C;&#x304B;&#x306A;&#x308A;&#x5C0F;&#x3055;&#x304F;&#xFF0C;&#x5927;&#x91CF;&#x306E;&#x30D7;&#x30ED;&#x30BB;&#x30B9;&#x3092;&#x6027;&#x80FD;&#x4F4E;&#x4E0B;&#x7121;&#x3057;&#x306B;&#x751F;&#x6210;&#x3067;&#x304D;&#x308B;<ul>
+<li>&#x30A4;&#x30E1;&#x30FC;&#x30B8;&#x3068;&#x3057;&#x3066;&#x306F;&#x30AA;&#x30D6;&#x30B8;&#x30A7;&#x30AF;&#x30C8;&#x6307;&#x5411;&#x8A00;&#x8A9E;&#x3067;&#x30AF;&#x30E9;&#x30B9;&#x3092;&#x30A4;&#x30F3;&#x30B9;&#x30BF;&#x30F3;&#x30B9;&#x5316;&#x3059;&#x308B;&#x3088;&#x3046;&#x306A;&#x6C17;&#x8EFD;&#x3055;&#x3067;&#x7ACB;&#x3061;&#x4E0A;&#x3052;&#x3089;&#x308C;&#x308B;</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>&#x57FA;&#x672C;&#x7684;&#x306B;&#x30A8;&#x30E9;&#x30FC;&#x3092;&#x30AD;&#x30E3;&#x30C3;&#x30C1;&#x3057;&#x306A;&#x3044;<ul>
+<li>&#x30A8;&#x30E9;&#x30FC;&#x767A;&#x751F;&#x6642;&#x306B;&#x306F;&#x30D7;&#x30ED;&#x30BB;&#x30B9;&#x3092;&#x6BBA;&#x3057;&#x3066;&#xFF0C;&#x65B0;&#x3057;&#x304F;&#x30D7;&#x30ED;&#x30BB;&#x30B9;&#x3092;&#x7ACB;&#x3061;&#x4E0A;&#x3052;&#x76F4;&#x3059;</li>
+<li>&#xFF08;&#x3064;&#x307E;&#x308A;&#x6B7B;&#x6D3B;&#x76E3;&#x8996;&#x3092;&#x3059;&#x308B;&#x30D7;&#x30ED;&#x30BB;&#x30B9;&#x304C;&#x5B58;&#x5728;&#x3057;&#x3066;&#x30FB;&#x30FB;&#x30FB;&#xFF09;</li>
+</ul>
+</li>
+</ul>
+<p>&#x3053;&#x3053;&#x307E;&#x3067;&#x805E;&#x304F;&#x3068;&#x6B20;&#x9665;&#x304C;&#x306A;&#x3044;&#x3088;&#x3046;&#x306B;&#x898B;&#x3048;&#x308B;&#x304C;&#xFF0C;&#x3082;&#x3061;&#x308D;&#x3093;&#x305D;&#x3093;&#x306A;&#x4E8B;&#x306F;&#x7121;&#x3044;&#xFF0E;&#x7279;&#x306B;&#x53E4;&#x5178;&#x7684;&#x306A;&#x8A00;&#x8A9E;&#x306E;&#x305F;&#x3081;&#x751F;&#x7523;&#x6027;&#x30FB;&#x53EF;&#x8AAD;&#x6027;&#x304C;&#x30FB;&#x30FB;&#x30FB;</p>
+<h2 id="elixir">Elixir</h2>
+<p>&#x66F8;&#x304D;&#x3084;&#x3059;&#x304F;&#x8AAD;&#x307F;&#x3084;&#x3059;&#x3044;&#x8A00;&#x8A9E;&#x3067;Erlang&#x306E;&#x7279;&#x6027;&#x3092;&#x5229;&#x7528;&#x3059;&#x308B;&#x305F;&#x3081;&#x306B;&#x958B;&#x767A;&#x3055;&#x308C;&#x3066;&#x3044;&#x308B;&#xFF0E;</p>
+<ul>
+<li>&#x8A00;&#x8A9E;&#x7684;&#x7279;&#x6027;&#x306F;Erlang&#x306E;&#x7279;&#x6027;&#x3092;&#x5F15;&#x304D;&#x7D99;&#x3044;&#x3067;&#x3044;&#x308B;</li>
+<li>&#x30B3;&#x30FC;&#x30C9;&#x306E;&#x898B;&#x305F;&#x76EE;&#x306F;Ruby&#x306B;&#x4F3C;&#x3066;&#x3044;&#x308B;<ul>
+<li>&#x958B;&#x767A;&#x8005;&#x304C;Ruby on Rails&#x306E;contributor&#x3060;&#x3063;&#x305F;&#x3088;&#x3046;&#x306A;&#x30FB;&#x30FB;&#x30FB;&#xFF08;&#x3046;&#x308D;&#x899A;&#x3048;&#xFF09;</li>
+<li>&#x305F;&#x3060;&#x3057;&#x8A00;&#x8A9E;&#x7684;&#x7279;&#x6027;&#x306F;&#x5168;&#x304F;&#x5225;</li>
+<li>&#x3088;&#x304F;&#x300C;Ruby&#x306E;&#x76AE;&#x3092;&#x88AB;&#x3063;&#x305F;Erlang&#x300D;&#x3068;&#x8A00;&#x308F;&#x308C;&#x308B;</li>
+</ul>
+</li>
+</ul>
+<p>Elixir&#x72EC;&#x81EA;&#x306E;&#x7279;&#x5FB4;&#xFF08;&#x8A18;&#x6CD5;&#x7684;&#x306A;&#x9762;&#x304B;&#x3089;&#xFF09;&#x3068;&#x3057;&#x3066;&#x306F;</p>
+<ul>
+<li>&#x30D1;&#x30BF;&#x30FC;&#x30F3;&#x30DE;&#x30C3;&#x30C1;&#x304C;&#x5F37;&#x529B;&#xFF08;&#x5927;&#x4E8B;&#xFF0E;&#x6163;&#x308C;&#x308B;&#x3068;&#x4ED6;&#x8A00;&#x8A9E;&#x306B;&#x623B;&#x308C;&#x306A;&#x3044;&#x3050;&#x3089;&#x3044;&#x5927;&#x4E8B;&#xFF09;</li>
+<li>&#x30B3;&#x30FC;&#x30C9;&#x306E;&#x81EA;&#x52D5;&#x751F;&#x6210;&#x3084;&#x8A00;&#x8A9E;&#x62E1;&#x5F35;&#x306A;&#x3069;&#x304C;&#x3067;&#x304D;&#x308B;&#x30DE;&#x30AF;&#x30ED;&#xFF08;&#x8A00;&#x8A9E;&#x81EA;&#x4F53;&#x304C;&#x30DE;&#x30AF;&#x30ED;&#x3067;&#x3069;&#x3093;&#x3069;&#x3093;&#x62E1;&#x5F35;&#x3057;&#x3066;&#x767A;&#x5C55;&#x3055;&#x305B;&#x305F;&#x3082;&#x306E;&#xFF09;<ul>
+<li>&#x3080;&#x3084;&#x307F;&#x306B;&#x6FEB;&#x7528;&#x3059;&#x308B;&#x3068;&#x5371;&#x967A;&#xFF0E;&#x9ED2;&#x9B54;&#x8853;&#xFF0E;</li>
+</ul>
+</li>
+</ul>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="../" class="navigation navigation-prev " aria-label="Previous page: Introduction">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="basic_types.html" class="navigation navigation-next " aria-label="Next page: 基本的な型">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"ElixirとErlang","level":"1.2","depth":1,"next":{"title":"基本的な型","level":"1.3","depth":1,"path":"src/basic_types.md","ref":"src/basic_types.md","articles":[]},"previous":{"title":"Introduction","level":"1.1","depth":1,"path":"README.md","ref":"README.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"src/elixir_erlang.md","mtime":"2020-09-06T16:10:58.739Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-09-06T19:20:58.793Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

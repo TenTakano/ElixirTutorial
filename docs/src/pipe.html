@@ -1,0 +1,337 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>パイプ演算子 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    
+    <link rel="prev" href="enum.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="elixir_erlang.html">
+            
+                <a href="elixir_erlang.html">
+            
+                    
+                    ElixirとErlang
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="basic_types.html">
+            
+                <a href="basic_types.html">
+            
+                    
+                    基本的な型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="operators.html">
+            
+                <a href="operators.html">
+            
+                    
+                    特徴的な演算子
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="module_functions.html">
+            
+                <a href="module_functions.html">
+            
+                    
+                    関数とモジュール
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="control_syntax.html">
+            
+                <a href="control_syntax.html">
+            
+                    
+                    制御構文
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="enum.html">
+            
+                <a href="enum.html">
+            
+                    
+                    Enumモジュール
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.8" data-path="pipe.html">
+            
+                <a href="pipe.html">
+            
+                    
+                    パイプ演算子
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >パイプ演算子</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="&#x30D1;&#x30A4;&#x30D7;&#x6F14;&#x7B97;&#x5B50;">&#x30D1;&#x30A4;&#x30D7;&#x6F14;&#x7B97;&#x5B50;</h1>
+<p>&#x30D7;&#x30ED;&#x30B0;&#x30E9;&#x30E0;&#x3092;&#x3053;&#x308C;&#x307E;&#x3067;&#x306B;&#x3042;&#x308B;&#x7A0B;&#x5EA6;&#x66F8;&#x3044;&#x305F;&#x3053;&#x3068;&#x304C;&#x3042;&#x308C;&#x3070;&#xFF0C;&#x95A2;&#x6570;&#x304C;&#x5165;&#x308C;&#x5B50;&#x306B;&#x306A;&#x3063;&#x3066;&#x53EF;&#x8AAD;&#x6027;&#x304C;&#x4E0B;&#x304C;&#x3063;&#x305F;&#x3068;&#x3044;&#x3046;&#x7D4C;&#x9A13;&#x304C;&#x3042;&#x308B;&#x3053;&#x3068;&#x3067;&#x3057;&#x3087;&#x3046;&#xFF0E;Elixir&#x306B;&#x306F;&#x305D;&#x308C;&#x3092;&#x89E3;&#x6C7A;&#x3059;&#x308B;&#x826F;&#x3044;&#x6F14;&#x7B97;&#x5B50;&#x304C;&#x3042;&#x308A;&#x307E;&#x3059;&#xFF0E;&#x4EE5;&#x4E0B;&#x306E;&#x95A2;&#x6570;&#x3092;&#x4F8B;&#x306B;&#x53D6;&#x308A;&#x307E;&#x3057;&#x3087;&#x3046;&#xFF0E;</p>
+<pre><code>Enum.reduce(Enum.filter(Enum.map(1..10_000, &amp;(&amp;1 + 2)), &amp;(rem(&amp;1, 2) == 0)), 0, &amp;+/2)
+</code></pre><p>&#x4E0A;&#x8A18;&#x306F;3&#x91CD;&#x306E;&#x5165;&#x308C;&#x5B50;&#x306B;&#x306A;&#x3063;&#x3066;&#x3044;&#x3066;&#x975E;&#x5E38;&#x306B;&#x8AAD;&#x307F;&#x3065;&#x3089;&#x304F;&#x306A;&#x3063;&#x3066;&#x3044;&#x307E;&#x3059;&#xFF0E;&#x9811;&#x5F35;&#x3063;&#x3066;&#x51E6;&#x7406;&#x3092;&#x8AAD;&#x307F;&#x89E3;&#x304F;&#x3068;&#xFF0C;1&#x304B;&#x3089;1&#x4E07;&#x307E;&#x3067;&#x306E;&#x6570;&#x5B57;&#x306B;2&#x3092;&#x8DB3;&#x3057;&#xFF0C;&#x305D;&#x306E;&#x7D50;&#x679C;&#x306E;&#x5076;&#x6570;&#x306E;&#x307F;&#x3092;&#x52A0;&#x7B97;&#x3057;&#x3066;&#x3044;&#x308B;&#x3068;&#x8A00;&#x3046;&#x3053;&#x3068;&#x304C;&#x308F;&#x304B;&#x308A;&#x307E;&#x3059;&#xFF0E;&#x3053;&#x3093;&#x306A;&#x30B3;&#x30FC;&#x30C9;&#x3092;&#x30EC;&#x30D3;&#x30E5;&#x30FC;&#x3057;&#x3066;&#x304F;&#x308C;&#x3068;&#x8A00;&#x308F;&#x308C;&#x305F;&#x65E5;&#x306B;&#x306F;&#x767A;&#x72C2;&#x3059;&#x308B;&#x81EA;&#x4FE1;&#x304C;&#x3042;&#x308A;&#x307E;&#x3059;&#xFF0E;</p>
+<p>&#x6050;&#x3089;&#x304F;&#x4ED6;&#x8A00;&#x8A9E;&#x306A;&#x3089;&#x5404;&#x51E6;&#x7406;&#x306E;&#x7D50;&#x679C;&#x3092;1&#x3064;&#x305A;&#x3064;&#x5909;&#x6570;&#x306B;&#x683C;&#x7D0D;&#x3059;&#x308B;&#x3068;&#x8A00;&#x3063;&#x305F;&#x65B9;&#x6CD5;&#x3092;&#x3068;&#x308B;&#x3067;&#x3057;&#x3087;&#x3046;&#xFF0E;&#x3057;&#x304B;&#x3057;&#xFF0C;1&#x56DE;&#x3057;&#x304B;&#x4F7F;&#x308F;&#x306A;&#x3044;&#xFF0C;&#x3057;&#x304B;&#x3082;&#x6B21;&#x306E;&#x884C;&#x3067;&#x4F7F;&#x7528;&#x3059;&#x308B;&#x5024;&#x3092;&#x3044;&#x3061;&#x3044;&#x3061;&#x5909;&#x6570;&#x306B;&#x683C;&#x7D0D;&#x3059;&#x308B;&#x306E;&#x306F;&#x3042;&#x307E;&#x308A;&#x30B9;&#x30DE;&#x30FC;&#x30C8;&#x3067;&#x306F;&#x3042;&#x308A;&#x307E;&#x305B;&#x3093;&#xFF0E;Elixir&#x3067;&#x306F;&#x3053;&#x306E;&#x3088;&#x3046;&#x306A;&#x30B8;&#x30EC;&#x30F3;&#x30DE;&#x3092;&#x30D1;&#x30A4;&#x30D7;&#x6F14;&#x7B97;&#x5B50;&#x3092;&#x7528;&#x3044;&#x3066;&#x89E3;&#x6C7A;&#x3059;&#x308B;&#x3053;&#x3068;&#x304C;&#x51FA;&#x6765;&#x307E;&#x3059;&#xFF0E;</p>
+<pre><code>1..10_000
+|&gt; Enum.map(&amp;(&amp;1 + 2))
+|&gt; Enum.filter(&amp;(rem(&amp;1, 2) == 0))
+|&gt; Enum.reduce(0, &amp;+/2)
+</code></pre><p>&#x3068;&#x3066;&#x3082;&#x8AAD;&#x307F;&#x3084;&#x3059;&#x304F;&#x66F8;&#x304D;&#x76F4;&#x3059;&#x3053;&#x3068;&#x304C;&#x51FA;&#x6765;&#x307E;&#x3057;&#x305F;&#xFF0E;&#x3053;&#x306E;&#x66F8;&#x304D;&#x65B9;&#x306F;&#x5165;&#x308C;&#x5B50;&#x3092;&#x89E3;&#x6C7A;&#x3059;&#x308B;&#x3060;&#x3051;&#x3067;&#x7121;&#x304F;&#xFF0C;&#x30C7;&#x30FC;&#x30BF;&#x3092;&#x51E6;&#x7406;&#x3059;&#x308B;&#x9806;&#x756A;&#x306B;&#x95A2;&#x6570;&#x3092;&#x4E26;&#x3079;&#x308B;&#x3053;&#x3068;&#x304C;&#x3067;&#x304D;&#x308B;&#x3068;&#x3044;&#x3046;&#x30E1;&#x30EA;&#x30C3;&#x30C8;&#x3082;&#x5F97;&#x3089;&#x308C;&#x307E;&#x3059;&#xFF0E;</p>
+<p>&#x30D1;&#x30A4;&#x30D7;&#x30E9;&#x30A4;&#x30F3;&#x6F14;&#x7B97;&#x5B50;&#x306F;&#x5DE6;&#x8FBA;&#x306E;&#x8A55;&#x4FA1;&#x7D50;&#x679C;&#x3092;&#x53F3;&#x8FBA;&#x306E;&#x95A2;&#x6570;&#x306E;&#x7B2C;1&#x5F15;&#x6570;&#x306B;&#x4E0E;&#x3048;&#x308B;&#x3068;&#x3044;&#x3046;&#x6319;&#x52D5;&#x3092;&#x3057;&#x307E;&#x3059;&#xFF0E;</p>
+<h4 id="&#x95A2;&#x6570;&#x306E;&#x7D50;&#x679C;&#x306E;&#x30CF;&#x30F3;&#x30C9;&#x30EA;&#x30F3;&#x30B0;&#x306B;&#x7528;&#x3044;&#x308B;"><strong>&#x95A2;&#x6570;&#x306E;&#x7D50;&#x679C;&#x306E;&#x30CF;&#x30F3;&#x30C9;&#x30EA;&#x30F3;&#x30B0;&#x306B;&#x7528;&#x3044;&#x308B;</strong></h4>
+<p>Elixir&#x3067;&#x306F;&#x6210;&#x529F;&#x3059;&#x308B;&#x304B;&#x308F;&#x304B;&#x3089;&#x306A;&#x3044;&#x95A2;&#x6570;&#x306E;&#x7D50;&#x679C;&#x304C;<code>{:ok, ...}</code>&#xFF0C;<code>{:error, ...}</code>&#x3068;&#x3057;&#x3066;&#x8FD4;&#x3055;&#x308C;&#x308B;&#x5834;&#x5408;&#x304C;&#x3042;&#x308A;&#x307E;&#x3059;&#xFF0E;&#x6210;&#x529F;&#x3057;&#x305F;&#x5834;&#x5408;&#x3060;&#x3051;&#x305D;&#x306E;&#x7D50;&#x679C;&#x3092;&#x7528;&#x3044;&#x3066;&#x6B21;&#x306E;&#x51E6;&#x7406;&#x3092;&#x3057;&#x305F;&#x3044;&#x3068;&#x3044;&#x3046;&#x5834;&#x5408;&#xFF0C;case&#x6587;&#x3092;&#x4F7F;&#x3048;&#x3070;&#x7C21;&#x5358;&#x306B;&#x66F8;&#x304F;&#x3053;&#x3068;&#x304C;&#x3067;&#x304D;&#x307E;&#x3059;&#xFF0E;</p>
+<pre><code>case func(arg) do
+  {:ok, result} -&gt; next_func(result)
+  error         -&gt; error              # {:error, ...}&#x3092;error&#x3068;&#x3057;&#x3066;&#x30DE;&#x30C3;&#x30C1;&#x3057;&#x3066;&#x3044;&#x307E;&#x3059;
+end
+</code></pre><p>&#x3055;&#x3089;&#x306B;&#xFF0C;&#x30D1;&#x30A4;&#x30D7;&#x6F14;&#x7B97;&#x5B50;&#x3092;&#x7528;&#x3044;&#x3066;&#x3053;&#x306E;&#x3088;&#x3046;&#x306B;&#x66F8;&#x304F;&#x3053;&#x3068;&#x3082;&#x3067;&#x304D;&#x307E;&#x3059;&#xFF0E;</p>
+<pre><code>func(arg)
+|&gt; case do
+  {:ok, result} -&gt; next_func(result)
+  error         -&gt; error
+end
+</code></pre>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="enum.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: Enumモジュール">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"パイプ演算子","level":"1.8","depth":1,"previous":{"title":"Enumモジュール","level":"1.7","depth":1,"path":"src/enum.md","ref":"src/enum.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"src/pipe.md","mtime":"2020-09-06T18:58:23.289Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-09-06T19:20:58.793Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
