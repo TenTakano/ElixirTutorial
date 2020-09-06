@@ -7,3 +7,4 @@
 * [関数とモジュール](src/module_functions.md)
 * [制御構文](src/control_syntax.md)
 * [Enumモジュール](src/enum.md)
+* [パイプ演算子](src/pipe.md)
