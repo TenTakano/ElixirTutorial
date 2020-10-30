@@ -280,6 +280,18 @@ iex&gt; add.(1, 2, 3)
 </code></pre><p>&#x307E;&#x305F;&#xFF0C;&#x5F15;&#x6570;&#x304C;1&#x3064;&#x4EE5;&#x4E0A;&#x306E;&#x5834;&#x5408;&#x306B;&#x306F;&#x7701;&#x7565;&#x8A18;&#x6CD5;&#x3092;&#x7528;&#x3044;&#x308B;&#x4E8B;&#x3082;&#x51FA;&#x6765;&#x307E;&#x3059;&#xFF0E;</p>
 <pre><code>iex&gt; &amp;(&amp;1 + &amp;2 + &amp;3)  # &#x300C;fn a, b, c -&gt; a + b + c end&#x300D;&#x3068;&#x540C;&#x3058;
 </code></pre><p><code>&amp;</code>&#x306B;&#x7D9A;&#x304F;&#x6570;&#x5B57;&#x304C;&#x5F15;&#x6570;&#x306E;&#x756A;&#x53F7;&#x306B;&#x5BFE;&#x5FDC;&#x3057;&#x3066;&#x3044;&#x307E;&#x3059;&#xFF0E;</p>
+<h2 id="&#x7DF4;&#x7FD2;&#x554F;&#x984C;">&#x7DF4;&#x7FD2;&#x554F;&#x984C;</h2>
+<ol>
+<li><p>&#x7B2C;1&#x5F15;&#x6570;&#xFF0C;&#x7B2C;2&#x5F15;&#x6570;&#x306B;&#x6570;&#x5B57;&#xFF0C;&#x7B2C;3&#x5F15;&#x6570;&#x306B;&#x5F15;&#x6570;&#x3092;2&#x3064;&#x3068;&#x308B;&#x95A2;&#x6570;&#x3092;&#x3068;&#x308A;&#xFF0C;&#x7B2C;1&#x5F15;&#x6570;&#x3068;&#x7B2C;2&#x5F15;&#x6570;&#x3092;&#x305D;&#x308C;&#x305E;&#x308C;&#x7B2C;3&#x5F15;&#x6570;&#x306E;&#x95A2;&#x6570;&#x3078;&#x6E21;&#x3057;&#x3066;&#x5B9F;&#x884C;&#x3059;&#x308B;&#x95A2;&#x6570;&#x3092;&#x4F5C;&#x3063;&#x3066;&#x307F;&#x307E;&#x3057;&#x3087;&#x3046;&#xFF0E;&#xFF08;<code>fn</code>&#x3092;&#x4F7F;&#x3046;&#x8A18;&#x6CD5;&#x3068;<code>&amp;</code>&#x3092;&#x4F7F;&#x3046;&#x8A18;&#x6CD5;&#x3068;&#x4E21;&#x65B9;&#x3067;&#x4F5C;&#x3063;&#x3066;&#x307F;&#x307E;&#x3057;&#x3087;&#x3046;&#xFF09;</p>
+<pre><code> &#x51FA;&#x529B;&#x4F8B;:
+ iex&gt; add = &amp;(&amp;1 + &amp;2) # &#x6E96;&#x5099;
+ iex&gt; func.(1, 2, add)
+ 3
+ iex&gt; mul = &amp;(&amp;1 * &amp;2) # &#x6E96;&#x5099;
+ iex&gt; func.(5, 6, mul)
+ 30
+</code></pre></li>
+</ol>
 
                                 
                                 </section>
@@ -323,7 +335,7 @@ iex&gt; add.(1, 2, 3)
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"関数とモジュール","level":"1.5","depth":1,"next":{"title":"制御構文","level":"1.6","depth":1,"path":"src/control_syntax.md","ref":"src/control_syntax.md","articles":[]},"previous":{"title":"特徴的な演算子","level":"1.4","depth":1,"path":"src/operators.md","ref":"src/operators.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"src/module_functions.md","mtime":"2020-09-06T17:00:57.599Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-09-10T15:16:44.336Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"関数とモジュール","level":"1.5","depth":1,"next":{"title":"制御構文","level":"1.6","depth":1,"path":"src/control_syntax.md","ref":"src/control_syntax.md","articles":[]},"previous":{"title":"特徴的な演算子","level":"1.4","depth":1,"path":"src/operators.md","ref":"src/operators.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"src/module_functions.md","mtime":"2020-10-21T18:33:45.488Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-10-30T04:46:56.413Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
