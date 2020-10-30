@@ -254,6 +254,26 @@
 <p>Elixir&#x3067;&#x306F;<code>+</code>&#x6F14;&#x7B97;&#x5B50;&#x3082;&#x95A2;&#x6570;&#x306E;&#x4E00;&#x3064;&#x3067;&#x3059;&#xFF0E;&#x306A;&#x306E;&#x3067;&#xFF0C;&#x4E0A;&#x8A18;&#x306E;&#x4F8B;&#x306F;&#x4EE5;&#x4E0B;&#x306E;&#x3088;&#x3046;&#x306B;&#x66F8;&#x304D;&#x63DB;&#x3048;&#x308B;&#x3053;&#x3068;&#x3082;&#x51FA;&#x6765;&#x307E;&#x3059;&#xFF0E;</p>
 <pre><code>iex&gt; Enum.reduce([1, 2, 3, 4, 5], 0, &amp;+/2)
 </code></pre><p>&#x8907;&#x96D1;&#x306B;&#x898B;&#x3048;&#x307E;&#x3059;&#x304C;&#xFF0C;&#x3053;&#x308C;&#x306F;<code>+</code>&#x3068;&#x8A00;&#x3046;&#x540D;&#x524D;&#x306E;&#x95A2;&#x6570;&#x3092;<code>Enum.reduce/3</code>&#x306B;&#x4E0E;&#x3048;&#x3066;&#x3044;&#x308B;&#x306B;&#x904E;&#x304E;&#x307E;&#x305B;&#x3093;&#xFF0E;</p>
+<h2 id="&#x7DF4;&#x7FD2;&#x554F;&#x984C;">&#x7DF4;&#x7FD2;&#x554F;&#x984C;</h2>
+<ol>
+<li><p>&#x4EE5;&#x4E0B;&#x306E;&#x30EA;&#x30B9;&#x30C8;&#xFF08;prime_ministers&#xFF09;&#x3092;&#xFF0C;&#x540D;&#x524D;&#x306E;&#x30EA;&#x30B9;&#x30C8;&#x306B;<code>Enum</code>&#x30E2;&#x30B8;&#x30E5;&#x30FC;&#x30EB;&#x3092;&#x4F7F;&#x3063;&#x3066;&#xFF0E;&#x4F8B;&#x3048;&#x3070;&#xFF0C;<code>[%{first: &quot;&#x592A;&#x90CE;&quot;, last: &quot;&#x7530;&#x4E2D;&quot;}]</code>&#x3067;&#x3042;&#x308C;&#x3070;&#xFF0C;<code>[&quot;&#x7530;&#x4E2D;&#x592A;&#x90CE;&quot;]</code>&#x304C;&#x5F97;&#x3089;&#x308C;&#x308C;&#x3070;&#x6B63;&#x89E3;&#x3067;&#x3059;&#xFF0E;</p>
+<pre><code> iex(1)&gt; prime_ministers = [
+ ...(1)&gt;   %{first: &quot;&#x535A;&#x6587;&quot;, last: &quot;&#x4F0A;&#x85E4;&quot;},
+ ...(1)&gt;   %{first: &quot;&#x6E05;&#x9686;&quot;, last: &quot;&#x9ED2;&#x7530;&quot;},
+ ...(1)&gt;   %{first: &quot;&#x5BE6;&#x7F8E;&quot;, last: &quot;&#x4E09;&#x689D;&quot;},
+ ...(1)&gt;   %{first: &quot;&#x6709;&#x670B;&quot;, last: &quot;&#x5C71;&#x7E23;&quot;},
+ ...(1)&gt;   %{first: &quot;&#x6B63;&#x7FA9;&quot;, last: &quot;&#x677E;&#x65B9;&quot;}
+ ...(1)&gt; ]
+
+ iex(2)&gt; Enum.map(???) # ???&#x3092;&#x88DC;&#x5B8C;&#x3057;&#x3066;&#x307F;&#x307E;&#x3057;&#x3087;&#x3046;
+ [&quot;&#x4F0A;&#x85E4;&#x535A;&#x6587;&quot;, &quot;&#x9ED2;&#x7530;&#x6E05;&#x9686;&quot;, &quot;&#x4E09;&#x689D;&#x5BE6;&#x7F8E;&quot;, &quot;&#x5C71;&#x7E23;&#x6709;&#x670B;&quot;, &quot;&#x677E;&#x65B9;&#x6B63;&#x7FA9;&quot;]
+</code></pre></li>
+<li><p>1&#x3067;&#x4F5C;&#x3063;&#x305F;&#x30EA;&#x30B9;&#x30C8;&#x3092;&#xFF0C;&#x6B74;&#x4EE3;&#x7DCF;&#x7406;&#x5927;&#x81E3;&#x306E;&#x5909;&#x9077;&#x304C;&#x308F;&#x304B;&#x308B;&#x6587;&#x5B57;&#x5217;&#x306B;&#x5909;&#x63DB;&#x3057;&#x3066;&#x307F;&#x307E;&#x3057;&#x3087;&#x3046;.</p>
+<pre><code> iex(3)&gt; [head | tail] = [&quot;&#x4F0A;&#x85E4;&#x535A;&#x6587;&quot;, &quot;&#x9ED2;&#x7530;&#x6E05;&#x9686;&quot;, &quot;&#x4E09;&#x689D;&#x5BE6;&#x7F8E;&quot;, &quot;&#x5C71;&#x7E23;&#x6709;&#x670B;&quot;, &quot;&#x677E;&#x65B9;&#x6B63;&#x7FA9;&quot;]
+ iex(4)&gt; Enum.reduce(???) # ???&#x3092;&#x88DC;&#x5B8C;&#x3057;&#x3066;&#x307F;&#x307E;&#x3057;&#x3087;&#x3046;
+ &quot;&#x4F0A;&#x85E4;&#x535A;&#x6587; -&gt; &#x9ED2;&#x7530;&#x6E05;&#x9686; -&gt; &#x4E09;&#x689D;&#x5BE6;&#x7F8E; -&gt; &#x5C71;&#x7E23;&#x6709;&#x670B; -&gt; &#x677E;&#x65B9;&#x6B63;&#x7FA9;&quot;
+</code></pre></li>
+</ol>
 
                                 
                                 </section>
@@ -297,7 +317,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Enumモジュール","level":"1.7","depth":1,"next":{"title":"パイプ演算子","level":"1.8","depth":1,"path":"src/pipe.md","ref":"src/pipe.md","articles":[]},"previous":{"title":"制御構文","level":"1.6","depth":1,"path":"src/control_syntax.md","ref":"src/control_syntax.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"src/enum.md","mtime":"2020-09-06T18:23:42.019Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-09-10T15:16:44.336Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Enumモジュール","level":"1.7","depth":1,"next":{"title":"パイプ演算子","level":"1.8","depth":1,"path":"src/pipe.md","ref":"src/pipe.md","articles":[]},"previous":{"title":"制御構文","level":"1.6","depth":1,"path":"src/control_syntax.md","ref":"src/control_syntax.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"src/enum.md","mtime":"2020-10-21T18:57:43.508Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-10-30T04:46:56.413Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
