@@ -112,3 +112,97 @@ iex(7)> func2.(1, 2, add)
 iex(8)> func2.(1, 2, mul)
 2
 ```
+
+## 制御構文
+
+1. 以下のいずれでも同じ結果が得られます．（個人的に前者の方がシンプルで美しいと思います）
+    ```
+    iex(1)> func = fn
+    ...(1)>   %{a: a} -> a
+    ...(1)>   _       -> nil
+    ...(1)> end
+    #Function<44.97283095/1 in :erl_eval.expr/5>
+
+    iex(2)> func.(%{a: 1})
+    1
+    iex(3)> func.(%{b: 1})
+    nil
+    ```
+    ```
+    iex(1)> func = fn map ->
+    ...(1)>   case map do
+    ...(1)>     %{a: a} -> a
+    ...(1)>     _       -> nil
+    ...(1)>   end
+    ...(1)> end
+    #Function<44.97283095/1 in :erl_eval.expr/5>
+
+    iex(2)> func.(%{a: 1})
+    1
+    iex(3)> func.(%{b: 1})
+    nil
+    ```
+2. 前問同様に`case`文を用いても解くことができます．
+    ```
+    iex(1)> func = fn
+    ...(1)>   %{a: a}              -> a
+    ...(1)>   arg when is_map(arg) -> nil
+    ...(1)>   _                    -> :error
+    ...(1)> end
+
+    #Function<44.97283095/1 in :erl_eval.expr/5>
+    iex(2)> func.(%{a: 1})
+    1
+    iex(3)> func.(%{b: 1})
+    nil
+    iex(4)> func.(1)
+    :error
+```
+
+3. `func/1`, `func1/1`, `func2/1`いずれでも課題を解くことができます．`func/1`と他2つの違いとして，`func/1`は関数呼び出し時に`rem/2`が実行できることを暗黙的に期待するので，数値以外の引数が与えられるとクラッシュします．
+    ```
+    defmodule Sample do
+    def func(n) do
+        case {rem(n, 15), rem(n, 5), rem(n, 3)} do
+        {0, _, _} -> "fizz buzz"
+        {_, 0, _} -> "buzz"
+        {_, _, 0} -> "fizz"
+        _         -> n
+        end
+    end
+
+    def func1(n) do
+        case n do
+        n when rem(n, 15) == 0 -> "fizz buzz"
+        n when rem(n, 5)  == 0 -> "buzz"
+        n when rem(n, 3)  == 0 -> "fizz"
+        _                      -> n
+        end
+    end
+
+    def func2(n) when rem(n, 15) == 0, do: "fizz buzz"
+    def func2(n) when rem(n, 5)  == 0, do: "buzz"
+    def func2(n) when rem(n, 3)  == 0, do: "fizz"
+    def func2(n),                      do: n
+    end
+    ```
+    `func2/1`で使用しているのは1行で関数を書くための記法です．1行で書かず，以下のように書いても同じ結果が得られます．
+    ```
+    def func2(n) when rem(n, 15) == 0 do
+    "fizz buzz"
+    end
+    ...
+    ```
+    `func2/1`では関数レベルでマッチングをしています．`case`の時と同じように先に書かれた関数から順次マッチングされていきます．
+
+    いずれの関数でも以下のような出力が得られます
+    ```
+    iex(1)> Sample.func(1)
+    1
+    iex(2)> Sample.func(3)
+    "fizz"
+    iex(3)> Sample.func(5)
+    "buzz"
+    iex(4)> Sample.func(15)
+    "fizz buzz"
+    ```
