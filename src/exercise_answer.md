@@ -222,8 +222,62 @@ iex(8)> func2.(1, 2, mul)
     iex(7)> Enum.reduce(tail, head, fn (name, acc) -> acc <> " -> " <> name end)
     "博文伊藤 -> 清隆黒田 -> 實美三條 -> 有朋山縣 -> 正義松方
     ```
-    `Enum.join/2`という便利な関数もあり，それを使うと前処理の要らない処理を書くこともできます．
+
+## パイプ演算子
+
+1. 
     ```
-    iex(8)> Enum.join(["博文伊藤", "清隆黒田", "實美三條", "有朋山縣", "正義松方"], " -> ")
+    defmodule Sample do
+      def func(prime_ministers) do
+        prime_ministers
+        |> Enum.map(fn %{first: first, last: last} -> first <> last end)
+        |> Enum.reduce("", fn
+          (name, "")  -> name
+          (name, str) -> str <> " -> " <> name
+        end)
+      end
+    end
+    ```
+    ```
+    iex(2)> Sample.func(prime_ministers)
     "博文伊藤 -> 清隆黒田 -> 實美三條 -> 有朋山縣 -> 正義松方"
+    ```
+    実は`Enum.join/2`という便利な関数もあり，それを使うともっとシンプルにできます．（練習のためにあえて紹介していませんでした）
+    ```
+    prime_ministers
+    |> Enum.map(fn %{first: first, last: last} -> first <> last end)
+    |> Enum.join(" -> ")
+    ```
+2. 
+    ```
+    defmodule Sample do
+      def func(prime_ministers) do
+        prime_ministers
+        |> Enum.map(fn %{first: first, last: last} -> first <> last end)
+        |> Enum.with_index(1)
+        |> Enum.reduce("", fn
+          ({name, _},     "")  -> "初代 " <> name
+          ({name, index}, acc) -> "#{acc} -> #{index}代目 #{name}"
+        end)
+      end
+    end
+    ```
+    ```
+    iex(6)> Sample.func(prime_ministers)
+    "初代 博文伊藤 -> 2代目 清隆黒田 -> 3代目 實美三條 -> 4代目 有朋山縣 -> 5代目 正義松方"
+    ```
+    `Enum.map/2`を使えば，`Enum.join/2`で結合することもできます．
+    ```
+    defmodule Sample do
+      def func(prime_ministers) do
+        prime_ministers
+        |> Enum.map(fn %{first: first, last: last} -> first <> last end)
+        |> Enum.with_index(1)
+        |> Enum.map(fn
+          {name, 1}     -> "初代 " <> name
+          {name, index} -> "#{index}代目 #{name}"
+        end)
+        |> Enum.join(" -> ")
+      end
+    end
     ```
