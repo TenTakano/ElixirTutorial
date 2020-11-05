@@ -1,0 +1,564 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>練習問題解答例 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    
+    <link rel="prev" href="pipe.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="elixir_erlang.html">
+            
+                <a href="elixir_erlang.html">
+            
+                    
+                    ElixirとErlang
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="basic_types.html">
+            
+                <a href="basic_types.html">
+            
+                    
+                    基本的な型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="operators.html">
+            
+                <a href="operators.html">
+            
+                    
+                    特徴的な演算子
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="module_functions.html">
+            
+                <a href="module_functions.html">
+            
+                    
+                    関数とモジュール
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="control_syntax.html">
+            
+                <a href="control_syntax.html">
+            
+                    
+                    制御構文
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="enum.html">
+            
+                <a href="enum.html">
+            
+                    
+                    Enumモジュール
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="pipe.html">
+            
+                <a href="pipe.html">
+            
+                    
+                    パイプ演算子
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.9" data-path="exercise_answer.html">
+            
+                <a href="exercise_answer.html">
+            
+                    
+                    練習問題解答例
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >練習問題解答例</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="&#x7DF4;&#x7FD2;&#x554F;&#x984C;&#x89E3;&#x7B54;">&#x7DF4;&#x7FD2;&#x554F;&#x984C;&#x89E3;&#x7B54;</h1>
+<h2 id="&#x7279;&#x5FB4;&#x7684;&#x306A;&#x6F14;&#x7B97;&#x5B50;">&#x7279;&#x5FB4;&#x7684;&#x306A;&#x6F14;&#x7B97;&#x5B50;</h2>
+<ol>
+<li><ol>
+<li>&#x5FC5;&#x8981;&#x306A;&#x30AD;&#x30FC;&#x306E;&#x307F;&#x30DE;&#x30C3;&#x30C1;&#x3055;&#x305B;&#x308C;&#x3070;&#x3088;&#x3044;<pre><code>iex(1)&gt; %{c: x} = %{a: 1, b: 2, c: 3}
+%{a: 1, b: 2, c: 3}
+iex(2)&gt; x
+3
+</code></pre></li>
+<li>&#x30EA;&#x30B9;&#x30C8;&#x306E;&#x9806;&#x756A;&#x901A;&#x308A;&#x306B;&#x30DE;&#x30C3;&#x30C1;&#x3055;&#x305B;&#x308B;&#xFF0E;&#x5FC5;&#x8981;&#x306E;&#x306A;&#x3044;&#x8981;&#x7D20;&#x306F;<code>_</code>&#x3067;&#x7121;&#x8996;&#x3059;&#x308B;&#xFF0E;<pre><code>iex(3)&gt; [_, x, _, y] =  [1, :a, &quot;a&quot;, 2.3]
+[1, :a, &quot;a&quot;, 2.3]
+iex(4)&gt; x
+:a      
+iex(5)&gt; y
+2.3
+</code></pre></li>
+<li>x&#x3068;y&#x306B;&#x3064;&#x3044;&#x3066;&#x306F;&#x524D;&#x554F;&#x3068;&#x540C;&#x3058;&#xFF0E;&#x4EFB;&#x610F;&#x306E;&#x8981;&#x7D20;&#x4EE5;&#x964D;&#x306E;&#x30EA;&#x30B9;&#x30C8;&#x306F;<code>|</code>&#x3092;&#x4F7F;&#x3048;&#x3070;&#x53D6;&#x308A;&#x51FA;&#x305B;&#x308B;<pre><code>iex(6)&gt; [_, x, _, y | z] =  [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+iex(7)&gt; x
+2       
+iex(8)&gt; y
+4       
+iex(9)&gt; z
+[5, 6, 7, 8, 9, 10]
+</code></pre></li>
+<li>&#x5165;&#x308C;&#x5B50;&#x306B;&#x306A;&#x3063;&#x3066;&#x3044;&#x308B;&#x5834;&#x5408;&#x3082;&#x5F62;&#x3092;&#x540C;&#x3058;&#x306B;&#x3059;&#x308C;&#x3070;&#x8907;&#x6570;&#x56DE;&#x306E;&#x30DE;&#x30C3;&#x30C1;&#x3092;&#x7528;&#x3044;&#x308B;&#x5FC5;&#x8981;&#x306F;&#x306A;&#x3044;&#xFF0E;<code>:d</code>&#x306E;&#x30EA;&#x30B9;&#x30C8;&#x306E;&#x30DE;&#x30C3;&#x30C1;&#x30F3;&#x30B0;&#x306F;<code>[_, y | _]</code>&#x3068;&#x3059;&#x308C;&#x3070;&#x9577;&#x3044;&#x30EA;&#x30B9;&#x30C8;&#x3067;&#x3082;&#x5BFE;&#x5FDC;&#x304C;&#x3067;&#x304D;&#x308B;&#xFF0E;<pre><code>iex(10)&gt; %{a: %{b: x, d: [_, y, _]}} = %{a: %{b: 1, c: 2, d: [3, 4, 5]}}
+%{a: %{b: 1, c: 2, d: [3, 4, 5]}}
+iex(11)&gt; x
+1
+iex(12)&gt; y
+4
+</code></pre></li>
+<li><code>|</code>&#x306F;&#x53F3;&#x5074;&#x306B;&#x8981;&#x7D20;&#x304C;&#x5B58;&#x5728;&#x3057;&#x3066;&#x3044;&#x306A;&#x304F;&#x3066;&#x3082;&#x4F7F;&#x7528;&#x3067;&#x304D;&#x308B;&#xFF08;&#x3053;&#x308C;&#x3092;&#x5B9F;&#x969B;&#x306B;&#x7528;&#x3044;&#x308B;&#x5834;&#x9762;&#x306F;&#x591A;&#x5206;&#x306A;&#x3044;&#xFF09;<pre><code>iex(13)&gt; [_, x, _ | y] =  [1, 2, 3]
+[1, 2, 3]
+iex(14)&gt; x
+2
+iex(15)&gt; y
+[]
+</code></pre></li>
+</ol>
+</li>
+<li><ol>
+<li><code>[_, x, 2]</code><pre><code>iex(1)&gt; [_, x, 2] = [1, 3, 2]
+[1, 3, 2]
+iex(2)&gt; x
+3
+iex(3)&gt; [_, x, 2] = [1, 2]   
+** (MatchError) no match of right hand side value: [1, 2]
+iex(3)&gt; [_, x, 2] = [1, 3, 1]
+** (MatchError) no match of right hand side value: [1, 3, 1]
+</code></pre></li>
+<li><code>%{&quot;c&quot; =&gt; x}</code><pre><code>iex(3)&gt; %{&quot;c&quot; =&gt; x} = %{&quot;a&quot; =&gt; 1, &quot;b&quot; =&gt; 2, &quot;c&quot; =&gt; 3}
+%{&quot;a&quot; =&gt; 1, &quot;b&quot; =&gt; 2, &quot;c&quot; =&gt; 3}
+iex(4)&gt; x
+3
+iex(5)&gt; %{&quot;c&quot; =&gt; x} = %{&quot;a&quot; =&gt; 1, &quot;b&quot; =&gt; 2}          
+** (MatchError) no match of right hand side value: %{&quot;a&quot; =&gt; 1, &quot;b&quot; =&gt; 2}
+iex(5)&gt; %{&quot;c&quot; =&gt; x} = %{:a =&gt; 1, :b =&gt; 2, :c =&gt; 3}
+** (MatchError) no match of right hand side value: %{a: 1, b: 2, c: 3}
+iex(5)&gt; %{&quot;c&quot; =&gt; x} = %{a: 1, b: 2, c: 3}         
+** (MatchError) no match of right hand side value: %{a: 1, b: 2, c: 3}
+</code></pre></li>
+<li><code>[_, _, x, _ | _]</code><pre><code>iex(5)&gt; [_, _, x, _ | _] = [1, 2, 3, 4, 5]
+[1, 2, 3, 4, 5]
+iex(6)&gt; x
+3
+iex(7)&gt; [_, _, x, _ | _] = [1, 2, 3, 4]   
+[1, 2, 3, 4]
+iex(8)&gt; x
+3
+iex(9)&gt; [_, _, x, _ | _] = [1, 2, 3]   
+** (MatchError) no match of right hand side value: [1, 2, 3]
+</code></pre></li>
+</ol>
+</li>
+</ol>
+<h2 id="&#x95A2;&#x6570;&#x3068;&#x30E2;&#x30B8;&#x30E5;&#x30FC;&#x30EB;">&#x95A2;&#x6570;&#x3068;&#x30E2;&#x30B8;&#x30E5;&#x30FC;&#x30EB;</h2>
+<pre><code>iex(1)&gt; add = &amp;(&amp;1 + &amp;2)
+&amp;:erlang.+/2
+iex(2)&gt; mul = &amp;(&amp;1 * &amp;2)
+&amp;:erlang.*/2
+
+iex(3)&gt; func1 = fn (a, b, f) -&gt; f.(a, b) end 
+#Function&lt;42.97283095/3 in :erl_eval.expr/5&gt;
+
+iex(4)&gt; func1.(1, 2, add)
+3
+iex(5)&gt; func1.(1, 2, mul)
+2
+
+iex(6)&gt; func2 = &amp;(&amp;3.(&amp;1, &amp;2))
+#Function&lt;42.97283095/3 in :erl_eval.expr/5&gt;
+
+iex(7)&gt; func2.(1, 2, add)
+3
+iex(8)&gt; func2.(1, 2, mul)
+2
+</code></pre><h2 id="&#x5236;&#x5FA1;&#x69CB;&#x6587;">&#x5236;&#x5FA1;&#x69CB;&#x6587;</h2>
+<ol>
+<li><p>&#x4EE5;&#x4E0B;&#x306E;&#x3044;&#x305A;&#x308C;&#x3067;&#x3082;&#x540C;&#x3058;&#x7D50;&#x679C;&#x304C;&#x5F97;&#x3089;&#x308C;&#x307E;&#x3059;&#xFF0E;&#xFF08;&#x500B;&#x4EBA;&#x7684;&#x306B;&#x524D;&#x8005;&#x306E;&#x65B9;&#x304C;&#x30B7;&#x30F3;&#x30D7;&#x30EB;&#x3067;&#x7F8E;&#x3057;&#x3044;&#x3068;&#x601D;&#x3044;&#x307E;&#x3059;&#xFF09;</p>
+<pre><code> iex(1)&gt; func = fn
+ ...(1)&gt;   %{a: a} -&gt; a
+ ...(1)&gt;   _       -&gt; nil
+ ...(1)&gt; end
+ #Function&lt;44.97283095/1 in :erl_eval.expr/5&gt;
+
+ iex(2)&gt; func.(%{a: 1})
+ 1
+ iex(3)&gt; func.(%{b: 1})
+ nil
+</code></pre><pre><code> iex(1)&gt; func = fn map -&gt;
+ ...(1)&gt;   case map do
+ ...(1)&gt;     %{a: a} -&gt; a
+ ...(1)&gt;     _       -&gt; nil
+ ...(1)&gt;   end
+ ...(1)&gt; end
+ #Function&lt;44.97283095/1 in :erl_eval.expr/5&gt;
+
+ iex(2)&gt; func.(%{a: 1})
+ 1
+ iex(3)&gt; func.(%{b: 1})
+ nil
+</code></pre></li>
+<li><p>&#x524D;&#x554F;&#x540C;&#x69D8;&#x306B;<code>case</code>&#x6587;&#x3092;&#x7528;&#x3044;&#x3066;&#x3082;&#x89E3;&#x304F;&#x3053;&#x3068;&#x304C;&#x3067;&#x304D;&#x307E;&#x3059;&#xFF0E;</p>
+<pre><code> iex(1)&gt; func = fn
+ ...(1)&gt;   %{a: a}              -&gt; a
+ ...(1)&gt;   arg when is_map(arg) -&gt; nil
+ ...(1)&gt;   _                    -&gt; :error
+ ...(1)&gt; end
+
+ #Function&lt;44.97283095/1 in :erl_eval.expr/5&gt;
+ iex(2)&gt; func.(%{a: 1})
+ 1
+ iex(3)&gt; func.(%{b: 1})
+ nil
+ iex(4)&gt; func.(1)
+ :error
+</code></pre></li>
+<li><p><code>func/1</code>, <code>func1/1</code>, <code>func2/1</code>&#x3044;&#x305A;&#x308C;&#x3067;&#x3082;&#x8AB2;&#x984C;&#x3092;&#x89E3;&#x304F;&#x3053;&#x3068;&#x304C;&#x3067;&#x304D;&#x307E;&#x3059;&#xFF0E;<code>func/1</code>&#x3068;&#x4ED6;2&#x3064;&#x306E;&#x9055;&#x3044;&#x3068;&#x3057;&#x3066;&#xFF0C;<code>func/1</code>&#x306F;&#x95A2;&#x6570;&#x547C;&#x3073;&#x51FA;&#x3057;&#x6642;&#x306B;<code>rem/2</code>&#x304C;&#x5B9F;&#x884C;&#x3067;&#x304D;&#x308B;&#x3053;&#x3068;&#x3092;&#x6697;&#x9ED9;&#x7684;&#x306B;&#x671F;&#x5F85;&#x3059;&#x308B;&#x306E;&#x3067;&#xFF0C;&#x6570;&#x5024;&#x4EE5;&#x5916;&#x306E;&#x5F15;&#x6570;&#x304C;&#x4E0E;&#x3048;&#x3089;&#x308C;&#x308B;&#x3068;&#x30AF;&#x30E9;&#x30C3;&#x30B7;&#x30E5;&#x3057;&#x307E;&#x3059;&#xFF0E;</p>
+<pre><code> defmodule Sample do
+ def func(n) do
+     case {rem(n, 15), rem(n, 5), rem(n, 3)} do
+     {0, _, _} -&gt; &quot;fizz buzz&quot;
+     {_, 0, _} -&gt; &quot;buzz&quot;
+     {_, _, 0} -&gt; &quot;fizz&quot;
+     _         -&gt; n
+     end
+ end
+
+ def func1(n) do
+     case n do
+     n when rem(n, 15) == 0 -&gt; &quot;fizz buzz&quot;
+     n when rem(n, 5)  == 0 -&gt; &quot;buzz&quot;
+     n when rem(n, 3)  == 0 -&gt; &quot;fizz&quot;
+     _                      -&gt; n
+     end
+ end
+
+ def func2(n) when rem(n, 15) == 0, do: &quot;fizz buzz&quot;
+ def func2(n) when rem(n, 5)  == 0, do: &quot;buzz&quot;
+ def func2(n) when rem(n, 3)  == 0, do: &quot;fizz&quot;
+ def func2(n),                      do: n
+ end
+</code></pre><p> <code>func2/1</code>&#x3067;&#x4F7F;&#x7528;&#x3057;&#x3066;&#x3044;&#x308B;&#x306E;&#x306F;1&#x884C;&#x3067;&#x95A2;&#x6570;&#x3092;&#x66F8;&#x304F;&#x305F;&#x3081;&#x306E;&#x8A18;&#x6CD5;&#x3067;&#x3059;&#xFF0E;1&#x884C;&#x3067;&#x66F8;&#x304B;&#x305A;&#xFF0C;&#x4EE5;&#x4E0B;&#x306E;&#x3088;&#x3046;&#x306B;&#x66F8;&#x3044;&#x3066;&#x3082;&#x540C;&#x3058;&#x7D50;&#x679C;&#x304C;&#x5F97;&#x3089;&#x308C;&#x307E;&#x3059;&#xFF0E;</p>
+<pre><code> def func2(n) when rem(n, 15) == 0 do
+ &quot;fizz buzz&quot;
+ end
+ ...
+</code></pre><p> <code>func2/1</code>&#x3067;&#x306F;&#x95A2;&#x6570;&#x30EC;&#x30D9;&#x30EB;&#x3067;&#x30DE;&#x30C3;&#x30C1;&#x30F3;&#x30B0;&#x3092;&#x3057;&#x3066;&#x3044;&#x307E;&#x3059;&#xFF0E;<code>case</code>&#x306E;&#x6642;&#x3068;&#x540C;&#x3058;&#x3088;&#x3046;&#x306B;&#x5148;&#x306B;&#x66F8;&#x304B;&#x308C;&#x305F;&#x95A2;&#x6570;&#x304B;&#x3089;&#x9806;&#x6B21;&#x30DE;&#x30C3;&#x30C1;&#x30F3;&#x30B0;&#x3055;&#x308C;&#x3066;&#x3044;&#x304D;&#x307E;&#x3059;&#xFF0E;</p>
+<p> &#x3044;&#x305A;&#x308C;&#x306E;&#x95A2;&#x6570;&#x3067;&#x3082;&#x4EE5;&#x4E0B;&#x306E;&#x3088;&#x3046;&#x306A;&#x51FA;&#x529B;&#x304C;&#x5F97;&#x3089;&#x308C;&#x307E;&#x3059;</p>
+<pre><code> iex(1)&gt; Sample.func(1)
+ 1
+ iex(2)&gt; Sample.func(3)
+ &quot;fizz&quot;
+ iex(3)&gt; Sample.func(5)
+ &quot;buzz&quot;
+ iex(4)&gt; Sample.func(15)
+ &quot;fizz buzz&quot;
+</code></pre></li>
+</ol>
+<h2 id="enum&#x30E2;&#x30B8;&#x30E5;&#x30FC;&#x30EB;">Enum&#x30E2;&#x30B8;&#x30E5;&#x30FC;&#x30EB;</h2>
+<ol>
+<li><pre><code> iex(3)&gt; Enum.map(prime_ministers, fn %{first: first, last: last} -&gt; first &lt;&gt; last end)
+ [&quot;&#x535A;&#x6587;&#x4F0A;&#x85E4;&quot;, &quot;&#x6E05;&#x9686;&#x9ED2;&#x7530;&quot;, &quot;&#x5BE6;&#x7F8E;&#x4E09;&#x689D;&quot;, &quot;&#x6709;&#x670B;&#x5C71;&#x7E23;&quot;, &quot;&#x6B63;&#x7FA9;&#x677E;&#x65B9;&quot;]
+</code></pre></li>
+<li><pre><code> iex(6)&gt; [head | tail] = [&quot;&#x535A;&#x6587;&#x4F0A;&#x85E4;&quot;, &quot;&#x6E05;&#x9686;&#x9ED2;&#x7530;&quot;, &quot;&#x5BE6;&#x7F8E;&#x4E09;&#x689D;&quot;, &quot;&#x6709;&#x670B;&#x5C71;&#x7E23;&quot;, &quot;&#x6B63;&#x7FA9;&#x677E;&#x65B9;&quot;]
+ [&quot;&#x535A;&#x6587;&#x4F0A;&#x85E4;&quot;, &quot;&#x6E05;&#x9686;&#x9ED2;&#x7530;&quot;, &quot;&#x5BE6;&#x7F8E;&#x4E09;&#x689D;&quot;, &quot;&#x6709;&#x670B;&#x5C71;&#x7E23;&quot;, &quot;&#x6B63;&#x7FA9;&#x677E;&#x65B9;&quot;]
+
+ iex(7)&gt; Enum.reduce(tail, head, fn (name, acc) -&gt; acc &lt;&gt; &quot; -&gt; &quot; &lt;&gt; name end)
+ &quot;&#x535A;&#x6587;&#x4F0A;&#x85E4; -&gt; &#x6E05;&#x9686;&#x9ED2;&#x7530; -&gt; &#x5BE6;&#x7F8E;&#x4E09;&#x689D; -&gt; &#x6709;&#x670B;&#x5C71;&#x7E23; -&gt; &#x6B63;&#x7FA9;&#x677E;&#x65B9;
+</code></pre></li>
+</ol>
+<h2 id="&#x30D1;&#x30A4;&#x30D7;&#x6F14;&#x7B97;&#x5B50;">&#x30D1;&#x30A4;&#x30D7;&#x6F14;&#x7B97;&#x5B50;</h2>
+<ol>
+<li><pre><code> defmodule Sample do
+   def func(prime_ministers) do
+     prime_ministers
+     |&gt; Enum.map(fn %{first: first, last: last} -&gt; first &lt;&gt; last end)
+     |&gt; Enum.reduce(&quot;&quot;, fn
+       (name, &quot;&quot;)  -&gt; name
+       (name, str) -&gt; str &lt;&gt; &quot; -&gt; &quot; &lt;&gt; name
+     end)
+   end
+ end
+</code></pre><pre><code> iex(2)&gt; Sample.func(prime_ministers)
+ &quot;&#x535A;&#x6587;&#x4F0A;&#x85E4; -&gt; &#x6E05;&#x9686;&#x9ED2;&#x7530; -&gt; &#x5BE6;&#x7F8E;&#x4E09;&#x689D; -&gt; &#x6709;&#x670B;&#x5C71;&#x7E23; -&gt; &#x6B63;&#x7FA9;&#x677E;&#x65B9;&quot;
+</code></pre> &#x5B9F;&#x306F;<code>Enum.join/2</code>&#x3068;&#x3044;&#x3046;&#x4FBF;&#x5229;&#x306A;&#x95A2;&#x6570;&#x3082;&#x3042;&#x308A;&#xFF0C;&#x305D;&#x308C;&#x3092;&#x4F7F;&#x3046;&#x3068;&#x3082;&#x3063;&#x3068;&#x30B7;&#x30F3;&#x30D7;&#x30EB;&#x306B;&#x3067;&#x304D;&#x307E;&#x3059;&#xFF0E;&#xFF08;&#x7DF4;&#x7FD2;&#x306E;&#x305F;&#x3081;&#x306B;&#x3042;&#x3048;&#x3066;&#x7D39;&#x4ECB;&#x3057;&#x3066;&#x3044;&#x307E;&#x305B;&#x3093;&#x3067;&#x3057;&#x305F;&#xFF09;<pre><code> prime_ministers
+ |&gt; Enum.map(fn %{first: first, last: last} -&gt; first &lt;&gt; last end)
+ |&gt; Enum.join(&quot; -&gt; &quot;)
+</code></pre></li>
+<li><pre><code> defmodule Sample do
+   def func(prime_ministers) do
+     prime_ministers
+     |&gt; Enum.map(fn %{first: first, last: last} -&gt; first &lt;&gt; last end)
+     |&gt; Enum.with_index(1)
+     |&gt; Enum.reduce(&quot;&quot;, fn
+       ({name, _},     &quot;&quot;)  -&gt; &quot;&#x521D;&#x4EE3; &quot; &lt;&gt; name
+       ({name, index}, acc) -&gt; &quot;#{acc} -&gt; #{index}&#x4EE3;&#x76EE; #{name}&quot;
+     end)
+   end
+ end
+</code></pre><pre><code> iex(6)&gt; Sample.func(prime_ministers)
+ &quot;&#x521D;&#x4EE3; &#x535A;&#x6587;&#x4F0A;&#x85E4; -&gt; 2&#x4EE3;&#x76EE; &#x6E05;&#x9686;&#x9ED2;&#x7530; -&gt; 3&#x4EE3;&#x76EE; &#x5BE6;&#x7F8E;&#x4E09;&#x689D; -&gt; 4&#x4EE3;&#x76EE; &#x6709;&#x670B;&#x5C71;&#x7E23; -&gt; 5&#x4EE3;&#x76EE; &#x6B63;&#x7FA9;&#x677E;&#x65B9;&quot;
+</code></pre> <code>Enum.map/2</code>&#x3092;&#x4F7F;&#x3048;&#x3070;&#xFF0C;<code>Enum.join/2</code>&#x3067;&#x7D50;&#x5408;&#x3059;&#x308B;&#x3053;&#x3068;&#x3082;&#x3067;&#x304D;&#x307E;&#x3059;&#xFF0E;<pre><code> defmodule Sample do
+   def func(prime_ministers) do
+     prime_ministers
+     |&gt; Enum.map(fn %{first: first, last: last} -&gt; first &lt;&gt; last end)
+     |&gt; Enum.with_index(1)
+     |&gt; Enum.map(fn
+       {name, 1}     -&gt; &quot;&#x521D;&#x4EE3; &quot; &lt;&gt; name
+       {name, index} -&gt; &quot;#{index}&#x4EE3;&#x76EE; #{name}&quot;
+     end)
+     |&gt; Enum.join(&quot; -&gt; &quot;)
+   end
+ end
+</code></pre></li>
+</ol>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="pipe.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: パイプ演算子">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"練習問題解答例","level":"1.9","depth":1,"previous":{"title":"パイプ演算子","level":"1.8","depth":1,"path":"src/pipe.md","ref":"src/pipe.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"src/exercise_answer.md","mtime":"2020-11-05T14:32:17.143Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-11-05T14:33:41.758Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

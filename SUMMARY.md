@@ -8,3 +8,4 @@
 * [制御構文](src/control_syntax.md)
 * [Enumモジュール](src/enum.md)
 * [パイプ演算子](src/pipe.md)
+* [練習問題解答例](src/exercise_answer.md)

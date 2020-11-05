@@ -75,8 +75,8 @@ iex> &(&1 + &2 + &3)  # 「fn a, b, c -> a + b + c end」と同じ
 
         出力例:
         iex> add = &(&1 + &2) # 準備
-        iex> func.(1, 2, add)
+        iex> func.(1, 2, add) # funcに適切な関数が拘束されていれば1と2を使ってaddを実行できる
         3
         iex> mul = &(&1 * &2) # 準備
-        iex> func.(5, 6, mul)
+        iex> func.(5, 6, mul) # funcに適切な関数が拘束されていれば1と2を使ってmulを実行できる
         30
