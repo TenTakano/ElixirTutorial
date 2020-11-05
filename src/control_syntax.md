@@ -107,11 +107,18 @@ iex(1)> Sample.echo("hoge")
 数字を1つ引数にとり，引数が3で割り切れるときは"fizz"，5で割り切れるときは"buzz"，3でも5でも割り切れるときは"fizz buzz"，それ以外のときは引数をそのまま返す関数を作ってください．（引数が数字であるかをチェックする必要はないものとします）
 
         出力例:
-        iex> func.(1)
+        iex> Sample.func(1)
         1
-        iex> func.(3)
+        iex> Sample.func(3)
         "fizz"
-        iex> func.(5)
+        iex> Sample.func(5)
         "buzz"
-        iex> func.(15)
+        iex> Sample.func(15)
         "fizz buzz"
+
+ヒント：elixirでは`rem/2`で剰余算ができます．
+
+```
+iex> rem(5, 2)
+1
+```
